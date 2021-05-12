@@ -29,7 +29,17 @@
     </div>  /////////////////// IMPORTER FICHIER TXT POUR LAYER-->
 <?php include("nav.php");?>
 <?php include("header.php");?>
-<?php include("acounts.php");?>
+<?php include("accounts.php");?>
+
+
+
+
+
+
+
+
+
+
 
    
 
@@ -37,53 +47,29 @@
         <h1>Vos comptes</h1>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Compte courant</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Compte n° XXXXXXXXXXXX</h6>
-                            <p class="card-text"><strong>Solde</strong>&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; +
-                                12,95€</p>
-                            <a href="#" class="card-link ">Vos opérations</a>
-                        </div>
+
+         <?php   foreach(get_accounts() as $name => $infos){ ?>
+
+                <div class="col-md-4 mb-5">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $infos['owner'].': '.$infos['name']?></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['number']?></h6>
+                        <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['amount'].'€'?></p>
+                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation'].'€'?></p>
+                
+                            
+                        <a href="#" class="card-link ">Vos opérations</a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Livret A</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Compte n° XXXXXXXXXXXX</h6>
-                            <p class="card-text"><strong>Solde</strong>&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; +
-                                246,50€ </p>
-                            <a href="#" class="card-link">Vos opérations</a>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">PEL</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Compte n° XXXXXXXXXXXX</h6>
-                            <p class="card-text"><strong>Solde</strong>&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; +
-                                1.750,00€ </p>
-                            <a href="#" class="card-link">Vos opérations</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Crédit Immobiler</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Compte n° XXXXXXXXXXXX</h6>
-                            <p class="card-text"><strong>Solde</strong>&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; -
-                                252.157,50€ </p>
-                            <a href="#" class="card-link">Vos opérations</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+                <?php } ?>
+
+
+
+
+
+               
 
     <?php include("footer.php");?>
 
