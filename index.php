@@ -21,6 +21,18 @@
 
 <body>
 
+if
+
+
+
+
+
+
+
+
+
+
+
     <!-- <div id="layer">
         <div id="layertxt"></div>
         <div id="btnlayer" class="loadContent">Veuillez accepter pour accéder <button type="button" value="Accepter"
@@ -31,19 +43,7 @@
 <?php include("header.php");?>
 <?php include("accounts.php");?>
 
-
-
-
-
-
-
-
-
-
-
-   
-
-    <main class="container my-5">
+      <main class="container my-5">
         <h1>Vos comptes</h1>
         <div class="container">
             <div class="row">
