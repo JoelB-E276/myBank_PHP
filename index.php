@@ -51,17 +51,19 @@
          <?php   foreach(get_accounts() as $name => $infos){ ?>
 
                 <div class="col-md-4 mb-5">
-                <div class="card" style="width: 20rem;">
+                  <div class="card" style="width: 20rem;">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $infos['owner'].': '.$infos['name']?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['number']?></h6>
                         <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['amount'].'€'?></p>
-                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation'].'€'?></p>
+                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation']?></p>
                 
                             
-                        <a href="#" class="card-link ">Vos opérations</a>
+                        <a href="*
+                        
+                        " class="card-link ">Vos opérations</a>
                     </div>
-                </div>
+                  </div>
                 </div>
                 <?php } ?>
 

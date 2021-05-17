@@ -120,6 +120,7 @@ body {
   display: flex;
   justify-content: space-around;
   color: rgb(255, 115, 0);
+  width: auto;
 }
 #imgFooter{
   max-width: 100px;
