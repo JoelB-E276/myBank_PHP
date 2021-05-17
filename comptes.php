@@ -21,72 +21,58 @@
 
 <body>
 
-    <!-- <div id="layer">
-        <div id="layertxt"></div>
-        <div id="btnlayer" class="loadContent">Veuillez accepter pour accéder <button type="button" value="Accepter"
-                id="butn" class="btn btn-dark">Accepter</button>
-        </div>
-    </div>  /////////////////// IMPORTER FICHIER TXT POUR LAYER-->
+
 <?php include("nav.php");?>
 <?php include("header.php");?>
-<?php include("accounts.php");?>
 
 
 
-
-
-
-
-
-
-
-
-   
-
-    <main class="container my-5">
-        <h1>Vos comptes</h1>
+<main class="container my-5">
+        <h1>Votre Compte</h1>
         <div class="container">
             <div class="row">
-
-         <?php   foreach(get_accounts() as $name => $infos){ ?>
-
-                <div class="col-md-4 mb-5">
+            <div class="col-md-4 mb-5">
                 <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $infos['owner'].': '.$infos['name']?></h5>
+                        <h5 class="card-title"><?php echo $_GET['$nom'];?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['number']?></h6>
                         <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['amount'].'€'?></p>
                         <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation']?></p>
-                
-                        <a href="comptes.php?$infos=name">Dis-moi bonjour !</a>
+                        <p>Bonjour <?php echo $_GET['infos']; ?> !</p>                            
+                        <a href="#" class="card-link ">Vos opérations</a>
                     </div>
                 </div>
                 </div>
-                <?php } ?>
-         </main>
-
-
-
-
-               
-
-    <?php include("footer.php");?>
 
 
 
 
 
-    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
-    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
 
-    
+
+
+
+
+
+
+
+<?php include("footer.php");?>
+
+
+
+
+
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+
 </body>
 
 </html>

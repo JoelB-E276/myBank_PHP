@@ -117,7 +117,7 @@ body {
 #footer{
   background-color: #000;
   text-align: center;
-  display: flex;
+ 
   justify-content: space-around;
   color: rgb(255, 115, 0);
 }
