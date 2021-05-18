@@ -1,3 +1,34 @@
+<?php 
+/*   if($_SESSION["validLogin"] != true){
+       header("Location: login.php");
+   }
+    $_SESSION["username"]= "Joël"
+
+   if($_SESSION["ValidLogin"]){
+       
+   }
+?>
+
+
+<?php 
+    if(isset($_POST['validConnection']))
+        if(isset($_POST['login']) && !empty($_POST['login']) &&
+            isset($_POST['password']) && !empty($_POST["password"]))
+            {
+                echo '<pre>';
+                print_r($_POST);
+                echo '</pre>';
+                $_SESSION["validLogin"] = true
+            }
+            else {
+                echo "Une erreur de login est survenue"
+            }
+*/
+?>
+
+
+
+
 <!doctype html>
 <html lang="fr">
 
@@ -21,24 +52,7 @@
 
 <body>
 
-if
 
-
-
-
-
-
-
-
-
-
-
-    <!-- <div id="layer">
-        <div id="layertxt"></div>
-        <div id="btnlayer" class="loadContent">Veuillez accepter pour accéder <button type="button" value="Accepter"
-                id="butn" class="btn btn-dark">Accepter</button>
-        </div>
-    </div>  /////////////////// IMPORTER FICHIER TXT POUR LAYER-->
 <?php include("nav.php");?>
 <?php include("header.php");?>
 <?php include("accounts.php");?>
@@ -48,36 +62,22 @@ if
         <div class="container">
             <div class="row">
 
-         <?php   foreach(get_accounts() as $name => $infos){ ?>
-
+                  <?php foreach(get_accounts() as $name => $infos) :?>
                 <div class="col-md-4 mb-5">
                   <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $infos['owner'].': '.$infos['name']?></h5>
+                        <h5 class="card-title"><?php echo $infos['name']?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['number']?></h6>
                         <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['amount'].'€'?></p>
-                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation']?></p>
-                
-                            
-                        <a href="*
-                        
-                        " class="card-link ">Vos opérations</a>
+                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation']?></p>          
+                        <a href="" class="card-link ">Vos opérations</a>
                     </div>
                   </div>
                 </div>
-                <?php } ?>
-         </main>
-
-
-
-
-               
+                <?php endforeach; ?>
+         </main>               
 
     <?php include("footer.php");?>
-
-
-
-
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
@@ -88,8 +88,5 @@ if
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
-    
-</body>
-
+   </body>
 </html>
