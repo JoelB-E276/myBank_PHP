@@ -1,17 +1,17 @@
 <?php 
-/*   if($_SESSION["validLogin"] != true){
+session_start();
+ if($_SESSION["validLogin"] != true){
        header("Location: login.php");
+       exit;
    }
     $_SESSION["username"]= "Joël"
 
-   if($_SESSION["ValidLogin"]){
-       
-   }
+ 
 ?>
 
 
 <?php 
-    if(isset($_POST['validConnection']))
+   /* if(isset($_POST['validConnection'])){
         if(isset($_POST['login']) && !empty($_POST['login']) &&
             isset($_POST['password']) && !empty($_POST["password"]))
             {
@@ -19,10 +19,11 @@
                 print_r($_POST);
                 echo '</pre>';
                 $_SESSION["validLogin"] = true
+            } else {
+                echo "Une erreur de login est survenue";
             }
-            else {
-                echo "Une erreur de login est survenue"
-            }
+        }
+
 */
 ?>
 
