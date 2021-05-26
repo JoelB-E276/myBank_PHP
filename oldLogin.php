@@ -11,28 +11,31 @@
 
 <?php   
 require "model/request.php";
-require "model/getLogin.php";
-
-
-
-
 
   if(!empty($_POST)){
-        $log = $_POST["login"];
-        $pass = $_POST["password"];
+        $log=$_POST["login"];
+        $pass=$_POST["password"];
         htmlspecialchars($log);
         htmlspecialchars($pass);
-        }
-    $check = getLogin($db,$_POST["login"]);
+       
+    }
+       if(isset($_POST['login']) && !empty($_POST['login'] && $_POST['login'] === "aze" ) &&
+            isset($_POST['password'])  && !empty($_POST["password"] && $_POST["password"] === "qsd")){
 
+              session_start();
+              $_SESSION["validLogin"] = true;
+              header("Location: index.php");
 
-
-
-?>
-
-
-
-
+            } elseif (empty($_POST)) {;?> 
+              <div class="alert alert-primary" role="alert">
+                Bienvenue, veuillez entrer vos identifiants
+             </div>
+         <?php   } else { ;?>
+              <div class="alert alert-dark" role="alert">
+                Une erreur est survenue, veuillez vérifer vos identifiants
+             </div>
+             <?php };?>  
+         
 
 <!doctype html>
 <html lang="fr">
@@ -59,10 +62,6 @@ require "model/getLogin.php";
 <?php include("template/nav.php");?>
 <?php include("template/header.php");?>
 
-<?php foreach($clients as $client):?>
-    <p>Foyer : <?php echo $client["nom"] ?></p>
-    <a href="single.php?id=<?php echo $client["prenom"] ?>">Voir le foyer</a>   <!-- id est déclaré par convention comme le nom dans la tableaud e la bdd-->
-<?php endforeach?>
 
 
 
@@ -70,7 +69,7 @@ require "model/getLogin.php";
 <h2 class="text-center mt-3">Connectez-vous pour poursuivre</h2>
 <div class="container">
  <div class="row">
-   <form class="col-12 col-md-2 my-5" method="POST">
+   <form class="col-12 col-md-2 my-5" method="post">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">login</label>
         <input type="" name="login"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
