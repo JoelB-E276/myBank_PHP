@@ -21,7 +21,8 @@ CREATE TABLE client
 INSERT INTO client (id, nom, prenom, c_log, c_password)
 VALUES ("09121906","hopper","grace","hopper","cobol"),
 ("10121815","lovelace","ada","lovelace","firstprogram"),
-("09111914","lamarr","hedy","lamarr","fhss");
+("09111914","lamarr","hedy","lamarr","fhss"),
+("05262021","Dujardin","Jean","az","qs");
 
 
 CREATE TABLE compte
@@ -35,8 +36,10 @@ CREATE TABLE compte
 
 INSERT INTO compte (id_compte, numero_compte, date_ouv, id_client)
 VALUES ("01","01234578901","19261209","09121906"),
-("02","01234578902","18251210","10121815"),
-("03","01234578903","19341109","09111914");
+        ("02","01234578902","18251210","10121815"),
+        ("03","01234578903","19341108","09111914"),
+        ("04","01234578904","19341111","05262021");
+
 ​
 CREATE TABLE operation
 (
@@ -52,4 +55,6 @@ CREATE TABLE operation
 INSERT INTO operation (id_numero_operation,type_de_transaction,montant,date_operation,solde_compte, id_compte)
 VALUES ("9876543","CHQ",25,"19261211",542.65,"01"),
 ("9876540","CHQ",42,"18261001",-12.20,"02"),
-("9876542","CHQ",9,"19341210",22.65,"03");
+("9876542","CHQ",9,"19341210",22.65,"03"),
+("9876544","CB",999.99,"19341210",15122.65,"04");
+

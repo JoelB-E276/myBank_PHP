@@ -10,6 +10,7 @@
 
 
 <?php   
+require "model/request.php";
 
       if(!empty($_POST)){
         $log=$_POST["login"];
@@ -58,8 +59,8 @@
 </head>
 
 <body>
-<?php include("nav.php");?>
-<?php include("header.php");?>
+<?php include("template/nav.php");?>
+<?php include("template/header.php");?>
 
 
 
@@ -87,7 +88,7 @@
  </div>
 </div>
 
-<?php include("footer.php");?>
+<?php include("template/footer.php");?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
