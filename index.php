@@ -54,9 +54,9 @@ session_start();
 <body>
 
 
-<?php include("nav.php");?>
-<?php include("header.php");?>
-<?php include("accounts.php");?>
+<?php include("template/nav.php");?>
+<?php include("template/header.php");?>
+<?php include("model/accounts.php");?>
 
       <main class="container my-5">
         <h1>Vos comptes</h1>
@@ -78,7 +78,7 @@ session_start();
                 <?php endforeach; ?>
          </main>               
 
-    <?php include("footer.php");?>
+    <?php include("template/footer.php");?>
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
