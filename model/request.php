@@ -11,8 +11,10 @@ $userPassword = '';
  }
  catch(Exception $error) {
    echo " Non connecté à la DBB";
-    die($error->getMessage());
+    echo $error->getMessage();
+    exit;
  }
 
 
 ?>
+ 

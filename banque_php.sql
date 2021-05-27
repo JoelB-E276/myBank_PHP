@@ -11,34 +11,33 @@ CREATE TABLE client
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
-    c_log VARCHAR(20) NOT NULL,
-    c_password VARCHAR(30) NOT NULL
+    c_email VARCHAR(255) NOT NULL,
+    c_password VARCHAR(255) NOT NULL
     
 ) ENGINE = INNODB;
 
-INSERT INTO client (id, nom, prenom, c_log, c_password)
-VALUES ("09121906","hopper","grace","hopper","cobol"),
-("10121815","lovelace","ada","lovelace","firstprogram"),
-("09111914","lamarr","hedy","lamarr","fhss"),
-("05262021","Dujardin","Jean","az","qs");
+INSERT INTO client (id, nom, prenom, c_email, c_password)
+VALUES ("09121906","hopper","grace","hopper@maboitemail.fr","cobol"),
+("10121815","lovelace","ada","lovelace@gmail.com","firstprogram"),
+("09111914","lamarr","hedy","lamarr@yahoo.fr","fhss"),
+("05262021","Dujardin","Jean","az@gmail.com","qs");
 
 
 CREATE TABLE compte
 (
     id_compte INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     numero_compte VARCHAR(12) NOT NULL,
+    type_compte VARCHAR (45),
     date_ouv DATE NOT NULL,
     id_client INT,
     FOREIGN KEY (id_client) REFERENCES client (id)
 ) ENGINE = INNODB;
 
-INSERT INTO compte (id_compte, numero_compte, date_ouv, id_client)
-VALUES ("01","01234578901","19261209","09121906"),
-        ("02","01234578902","18251210","10121815"),
-        ("03","01234578903","19341108","09111914"),
-        ("04","01234578904","19341111","05262021");
-
-​
+INSERT INTO compte (id_compte, numero_compte, type_compte, date_ouv, id_client)
+VALUES  ("01","01234578901","Compte courant","19261209","09121906"),
+        ("02","01234578902","Compte courant","18251210","10121815"),
+        ("03","01234578903","Compte courant","19341108","09111914"),
+        ("04","01234578904","Compte courant","19341111","05262021");
 CREATE TABLE operation
 (
     id_numero_operation INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
