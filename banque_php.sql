@@ -4,8 +4,6 @@ CREATE USER banque_php @localhost IDENTIFIED BY 'aaa';
 
 GRANT ALL PRIVILEGES ON banque_php TO banquePHP @localhost;
 
-FLUSH PRIVILEGES;
-
 
 
 CREATE TABLE client
