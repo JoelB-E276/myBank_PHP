@@ -1,35 +1,22 @@
 <?php 
 session_start();
- if($_SESSION["validLogin"] != true){
-       header("Location: login.php");
-       exit;
-   }
-    $_SESSION["username"]= "Joël"
+ if(isset($_SESSION["user"])){
+    require "model/request.php";
+    require "model/getLogin.php";
+    require "model/getCompteModel.php";
+    $account = getCompte($db);
+    $user = $_SESSION;
 
- 
-?>
 
+} else {
+    header("login.php");
+    exit;
+}
+ ?>
 
 <?php 
-   /* if(isset($_POST['validConnection'])){
-        if(isset($_POST['login']) && !empty($_POST['login']) &&
-            isset($_POST['password']) && !empty($_POST["password"]))
-            {
-                echo '<pre>';
-                print_r($_POST);
-                echo '</pre>';
-                $_SESSION["validLogin"] = true
-            } else {
-                echo "Une erreur de login est survenue";
-            }
-        }
-
-*/
-?>
-
-
-
-
+    var_dump($account);
+  ?>
 <!doctype html>
 <html lang="fr">
 
@@ -50,10 +37,7 @@ session_start();
 
     <title>My Bank</title>
 </head>
-
 <body>
-
-
 <?php include("template/nav.php");?>
 <?php include("template/header.php");?>
 <?php include("model/accounts.php");?>
@@ -63,14 +47,14 @@ session_start();
         <div class="container">
             <div class="row">
 
-                  <?php foreach(get_accounts() as $name => $infos) :?>
+                  <?php foreach($user as $infos) :?>
                 <div class="col-md-4 mb-5">
                   <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $infos['name']?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['number']?></h6>
-                        <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['amount'].'€'?></p>
-                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $infos['last_operation']?></p>          
+                        <h5 class="card-title"><?php echo $infos['prenom']?></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $user['c_email']?></h6>
+                        <p class="card-text"><strong>Solde </strong><?php echo '+ '.$user['amount'].'€'?></p>
+                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $user['last_operation']?></p>          
                         <a href="" class="card-link ">Vos opérations</a>
                     </div>
                   </div>

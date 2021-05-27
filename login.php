@@ -1,38 +1,28 @@
-<?php 
-    /*$_SESSION["username"]= Joël
-
-   if($_SESSION["ValidLogin"]){
-       header("Location: index.php");
-   }
-*/
-
-?>
-
 
 <?php   
 require "model/request.php";
 require "model/getLogin.php";
 
-
-
-
-
-  if(!empty($_POST)){
-        $log = $_POST["login"];
-        $pass = $_POST["password"];
-        htmlspecialchars($log);
-        htmlspecialchars($pass);
-        }
-    $check = getLogin($db);
-
-
-
+    if(isset($_POST["login"]) && isset($_POST["password"])) {
+      $user = getLogin($db, $_POST["login"]);
+      var_dump($user);
+      // On vérifie que l'email exit en bdd lors de la requête
+      if($user){
+              //on verif le mot de passe
+          if(password_verify($_POST["password"], $user["c_password"])) { // vérifie qu'un des hashages possible du mdp correspond
+              // On démarre une session et on stocke l'utilisateur dedans avant de l'envoyer sur index /
+              session_start();
+              $_SESSION["user"] = $user;
+              header("Location:index.php");
+              exit;
+              }
+          // Si les données rentrées dans le formulaire ne sont pas les bonnes
+          } 
+         echo "Identifiants invalides";   
+     
+  }
 
 ?>
-
-
-
-
 
 <!doctype html>
 <html lang="fr">
@@ -59,10 +49,7 @@ require "model/getLogin.php";
 <?php include("template/nav.php");?>
 <?php include("template/header.php");?>
 
-<?php foreach($clients as $client):?>
-    <p>Foyer : <?php echo $client["nom"] ?></p>
-    <a href="single.php?id=<?php echo $client["prenom"] ?>">Voir le foyer</a>   <!-- id est déclaré par convention comme le nom dans la tableaud e la bdd-->
-<?php endforeach?>
+
 
 
 
@@ -73,7 +60,7 @@ require "model/getLogin.php";
    <form class="col-12 col-md-2 my-5" method="POST">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">login</label>
-        <input type="" name="login"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" name="login"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         <div id="emailHelp"  class="form-text">N'ayez pas peur de nous... entrez dans l'inconnue</div>
       </div>
       <div class="mb-3">
