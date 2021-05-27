@@ -23,7 +23,7 @@ require "model/getLogin.php";
         htmlspecialchars($log);
         htmlspecialchars($pass);
         }
-    $check = getLogin($db,$_POST["login"]);
+    $check = getLogin($db);
 
 
 
