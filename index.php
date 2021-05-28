@@ -4,11 +4,8 @@ session_start();
     require "model/request.php";
     require "model/getLogin.php";
     require "model/getCompteModel.php";
-
-    $account = getCompte($db);
-    $user = $_SESSION;
-
-
+   $account = getCompte($db,$_SESSION["user"]["id"]);
+///////////////////// COUCOU SAMIR !!!!  :-))))))//////////////////////////////
 } else {
     header("Location:login.php");
     exit;
@@ -16,11 +13,10 @@ session_start();
  ?>
 
 <?php 
-    
+    ////////////////// Toi aussi tu as du travail , ne perd pas trop de temps! ////////////////
+var_dump ($account);
 
-foreach($user as $infos){
-  var_dump($infos["id"]);
-}
+
     
     
   ?>
@@ -54,11 +50,11 @@ foreach($user as $infos){
         <div class="container">
             <div class="row">
 
-                  <?php foreach($user as $infos) :?>
+                 
                 <div class="col-md-4 mb-5">
                   <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $infos['prenom']?></h5>
+                        <h5 class="card-title"><?php echo $account['numero_compte']?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['c_email']?></h6>
                         <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['numero_compte'].'€'?></p>
                         <p class="card-text"><strong>Dernière opération</strong><br><?php echo $user['numero_compte']?></p>          
@@ -66,7 +62,6 @@ foreach($user as $infos){
                     </div>
                   </div>
                 </div>
-                <?php endforeach; ?>
          </main>               
 
     <?php include("template/footer.php");?>

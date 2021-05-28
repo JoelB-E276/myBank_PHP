@@ -1,27 +1,23 @@
 <?php 
-
-function getCompte(PDO $db):array {      // une prepare  +  FROM compte id=: variable
-        $response =  $db->query("SELECT * FROM compte");  
-        $result = $response->fetchAll(PDO::FETCH_ASSOC); 
+function getCompte(PDO $db, $compte):array { 
+        $response =  $db->query("SELECT numero_compte, id_client, id_compte FROM compte WHERE id_client = '{$compte}'"); 
+                                                         
+         $result = $response->fetchAll(PDO::FETCH_ASSOC);
   
-        return $result;                               
-}     
+        return $result;                                
+  
+      }
 
 ?>
 
-
-
-SELECT *
-FROM A
-INNER JOIN B ON A.key = B.key
-
 <?php 
-
-function getTable(PDO $db):array {      // une prepare  +  FROM compte id=: variable
-        $response =  $db->query("SELECT * FROM compte");  
-        $result = $response->fetchAll(PDO::FETCH_ASSOC); 
+function getOperation(PDO $db, $operation):array { 
+        $response =  $db->query("SELECT solde_compte FROM operation"); 
+                                                         
+         $result = $response->fetchAll(PDO::FETCH_ASSOC);
   
-        return $result;                               
-}     
+        return $result;                                
+  
+      }
 
 ?>

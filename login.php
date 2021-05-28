@@ -13,6 +13,8 @@ require "model/getLogin.php";
               // On démarre une session et on stocke l'utilisateur dedans avant de l'envoyer sur index /
               session_start();
               $_SESSION["user"] = $user;
+              $_SESSION["id"] = $id;
+              $_SESSION["nom"]= 
               header("Location:index.php");
               exit;
               }
