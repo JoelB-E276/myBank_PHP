@@ -4,18 +4,25 @@ session_start();
     require "model/request.php";
     require "model/getLogin.php";
     require "model/getCompteModel.php";
+
     $account = getCompte($db);
     $user = $_SESSION;
 
 
 } else {
-    header("login.php");
+    header("Location:login.php");
     exit;
 }
  ?>
 
 <?php 
-    var_dump($account);
+    
+
+foreach($user as $infos){
+  var_dump($infos["id"]);
+}
+    
+    
   ?>
 <!doctype html>
 <html lang="fr">
@@ -52,9 +59,9 @@ session_start();
                   <div class="card" style="width: 20rem;">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $infos['prenom']?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $user['c_email']?></h6>
-                        <p class="card-text"><strong>Solde </strong><?php echo '+ '.$user['amount'].'€'?></p>
-                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $user['last_operation']?></p>          
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $infos['c_email']?></h6>
+                        <p class="card-text"><strong>Solde </strong><?php echo '+ '.$infos['numero_compte'].'€'?></p>
+                        <p class="card-text"><strong>Dernière opération</strong><br><?php echo $user['numero_compte']?></p>          
                         <a href="" class="card-link ">Vos opérations</a>
                     </div>
                   </div>

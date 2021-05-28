@@ -17,10 +17,10 @@ CREATE TABLE client
 ) ENGINE = INNODB;
 
 INSERT INTO client (id, nom, prenom, c_email, c_password)
-VALUES ("09121906","hopper","grace","hopper@maboitemail.fr","cobol"),
-("10121815","lovelace","ada","lovelace@gmail.com","firstprogram"),
-("09111914","lamarr","hedy","lamarr@yahoo.fr","fhss"),
-("05262021","Dujardin","Jean","az@gmail.com","qs");
+VALUES ("09121906","hopper","grace","hopper@maboitemail.fr","$2y$10$HxbqWYc5sEOB2gpuAJdmLeI/WA.JaHFfD7MaTpZDbSLGGy.MnNw8a"),/*cobol*/
+("10121815","lovelace","ada","lovelace@gmail.com","$2y$10$wlVB/tSgOT2hTkDinrONley5fX8mpYropomzRomebgJ6gHNzzcnJu"),/*firstprogram*/
+("09111914","lamarr","hedy","lamarr@yahoo.fr","$2y$10$kNiGsdkyjgJJfv7sCVsqeuZaFycZtr4kc34ZlcRJL3y4kuV9Qmcm."),/*fhss*/
+("05262021","Dujardin","Jean","az@gmail.com","$2y$10$VaYSfAQi71EXZLdooTS.NO9nXGvl6FSW1pvDSJSR.o3aWShnLlBfi");/*qs*/
 
 
 CREATE TABLE compte
