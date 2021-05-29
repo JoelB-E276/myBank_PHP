@@ -6,7 +6,8 @@ session_start();
     require "model/getCompteModel.php";
     require "model/getDetailModel.php";
     $account = getCompte($db,$_SESSION["user"]["id"]);
-    
+    $detail = getDetail($db,$_GET["nCompte"]);
+
 
 } else {
     header("Location:login.php");
@@ -15,7 +16,7 @@ session_start();
  ?>
 
 <?php 
-var_dump ($account);
+var_dump ($detail);
 
 
     
@@ -47,25 +48,31 @@ var_dump ($account);
 <?php include("model/accounts.php");?>
 
       <main class="container my-5">
-        <h1>Vos comptes</h1>
+        <h1>Détails des opérations</h1>
         <div class="container">
             <div class="row ">
 
-            <?php foreach($account as $data):?>
-
-                <div class="col-md-3 mb-5 mx-5">
-                  <div class="card" style="width: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $_SESSION["user"]["prenom"] ." ". $_SESSION["user"]["nom"];?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $data["type_compte"]?></h6>
-                        <p class="card-text"><?php echo "N°compte " . $data["numero_compte"]?></p>
-                        <p class="card-text"><strong>Solde</strong></p>
-                        <p class="card-text"><?php echo $data["solde_compte"]?></p>          
-                        <a href="view/compte.php?nCompte=<?php echo $data["id_compte"] ?>" class="card-link stretched-link">Détail de vos opérations</a>
-                    </div>
-                  </div>
-                </div>
-           <?php endforeach?>
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"><?php echo $_SESSION["user"]["prenom"] ." ". $_SESSION["user"]["nom"];?></th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Type de transaction</th>
+                    <th scope="col">Montant</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  <?php foreach($detail as $data):?>
+                    <th scope="row"></th>
+                    <td><?php echo $data["date_operation"]?></td>
+                    <td><?php echo $data["type_de_transaction"]?></td>
+                    <td><?php echo $data["montant"]?></td>          
+                   </tr>
+                   <?php endforeach?>
+                </tbody>        
+             </table>  
+           
 
          </main>               
 
