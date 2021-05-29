@@ -47,7 +47,7 @@ var_dump ($detail);
 <?php include("template/header.php");?>
 <?php include("model/accounts.php");?>
 
-      <main class="container my-5">
+      <main class="container mt-5">
         <h1>Détails des opérations</h1>
         <div class="container">
             <div class="row ">

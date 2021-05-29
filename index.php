@@ -61,7 +61,7 @@ var_dump ($account);
                         <p class="card-text"><?php echo "N°compte " . $data["numero_compte"]?></p>
                         <p class="card-text"><strong>Solde</strong></p>
                         <p class="card-text"><?php echo $data["solde_compte"]?></p>          
-                        <a href="view/compte.php?nCompte=<?php echo $data["id_compte"] ?>" class="card-link stretched-link">Détail de vos opérations</a>
+                        <a href="compte.php?nCompte=<?php echo $data["id_compte"] ?>" class="card-link stretched-link">Détail de vos opérations</a>
                     </div>
                   </div>
                 </div>
