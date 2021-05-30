@@ -5,7 +5,7 @@ function getLogin(PDO $db, $email ):array { // nom arbitraire pour se connecter 
     $query->execute([
         "email" => $email
     ]);                                           // $response stock la valuer de retour du Query (requête)
-     // $result = $response->fetchAll();               // fetchALL récupere toute les données renvoyées par la requete
+     // $result = $response->fetchAll();               // fetchALL récupere toute les données renvoyées par la requete fetch sur retour qui comporte une seule ligne
      $result = $query->fetch(PDO::FETCH_ASSOC);  // + Constante de classe pour fecth all pour définir son mode de sélection   
 
     return $result;    

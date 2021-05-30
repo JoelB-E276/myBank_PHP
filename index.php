@@ -7,20 +7,11 @@ session_start();
     require "model/getDetailModel.php";
     $account = getCompte($db,$_SESSION["user"]["id"]);
     
-
 } else {
     header("Location:login.php");
     exit;
 }
  ?>
-
-<?php 
-var_dump ($account);
-
-
-    
-    
-  ?>
 <!doctype html>
 <html lang="fr">
 

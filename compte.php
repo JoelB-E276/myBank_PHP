@@ -8,20 +8,12 @@ session_start();
     $account = getCompte($db,$_SESSION["user"]["id"]);
     $detail = getDetail($db,$_GET["nCompte"]);
 
-
 } else {
     header("Location:login.php");
     exit;
 }
  ?>
 
-<?php 
-var_dump ($detail);
-
-
-    
-    
-  ?>
 <!doctype html>
 <html lang="fr">
 
@@ -72,9 +64,9 @@ var_dump ($detail);
                    <?php endforeach?>
                 </tbody>        
              </table>  
-           
-
-         </main>               
+            </div>
+           </div>
+       </main>               
 
     <?php include("template/footer.php");?>
 

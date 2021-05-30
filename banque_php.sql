@@ -28,7 +28,7 @@ CREATE TABLE compte
     id_compte INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     numero_compte VARCHAR(12) NOT NULL,
     type_compte VARCHAR (45),
-    date_ouv DATE NOT NULL,
+    date_ouv DATE NOT NULL, 
     solde_compte FLOAT(12,2),
     id_client INT,
     FOREIGN KEY (id_client) REFERENCES client (id)
