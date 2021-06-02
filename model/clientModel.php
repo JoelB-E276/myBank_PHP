@@ -9,7 +9,20 @@ function getLogin(PDO $db, $email ):array { // nom arbitraire pour se connecter 
      $result = $query->fetch(PDO::FETCH_ASSOC);  // + Constante de classe pour fecth all pour définir son mode de sélection   
 
     return $result;    
-}     
+}   
 
+
+function getData(PDO $db, $id):array { 
+    $response =  $db->query("SELECT client.nom, client.prenom
+     FROM client 
+     INNER JOIN compte 
+     ON client.id = compte.id_client 
+     WHERE compte.id_client ='{$id}'");                        
+    
+    $result = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;                                
+
+  }
 
 ?>

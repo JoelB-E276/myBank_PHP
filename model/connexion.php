@@ -1,6 +1,6 @@
 
 <?php
-
+// renomer
 $dbName = 'banque_php';
 $userName = 'root';
 $userPassword = '';

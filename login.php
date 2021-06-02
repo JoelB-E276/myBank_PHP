@@ -1,7 +1,7 @@
 
 <?php   
-require "model/request.php";
-require "model/getLogin.php";
+require "model/connexion.php";
+require "model/clientModel.php";
 
     if(isset($_POST["login"]) && isset($_POST["password"])) {
       $user = getLogin($db, $_POST["login"]);

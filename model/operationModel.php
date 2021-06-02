@@ -10,4 +10,13 @@ function getDetail(PDO $db, $compte ):array {
 
     return $result;  
 }
+
+function getOperation(PDO $db, $o):array { 
+    $response =  $db->query("SELECT solde_compte, id_compte FROM operation WHERE id_compte = '{$o}'"); 
+                                                     
+     $result = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;                                
+
+  }
 ?>
