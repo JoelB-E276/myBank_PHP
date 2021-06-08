@@ -1,21 +1,5 @@
 
 <?php
-/*$dbName = 'banque_php';
-$userName = 'root';
-$userPassword = '';
-
- try {
-    $db = new PDO('mysql:host=localhost;dbname='.$dbName.';charset=utf8', $userName,$userPassword );
-     
-   }
- catch(Exception $error) {
-   echo " Non connecté à la DBB";
-    echo $error->getMessage();
-    exit;
- }*/
-
-
-
 class Connexion
 {
     const DB_NAME = 'banque_php';
@@ -36,8 +20,6 @@ class Connexion
          echo $error->getMessage();
          exit;
        }
-  
- 
    }
 }
 
