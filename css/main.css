@@ -93,25 +93,34 @@ a {
   }
 body {
     position: relative;
+    
    }
    .li{
   color:rgb(255, 115, 0);
 }
-.navbar{
+#nav{
     background-color: #000;
+    color: rgb(240, 16, 27);
     
   }
+
+
 #header{
+
   background-color: #000;
   text-align: center;
   padding-bottom: 15px;
 }  
+#imgHead{
+  height: 25vh;
+}
 #footer{
   background-color: #000;
   text-align: center;
-  display: flex;
+ 
   justify-content: space-around;
   color: rgb(255, 115, 0);
+  width: auto;
 }
 #imgFooter{
   max-width: 100px;
@@ -142,9 +151,6 @@ h1{
   margin-top: 12vh;    
   margin-bottom: 12vh;
 }
-
-
-
 
 
 /* ==========================================================================
