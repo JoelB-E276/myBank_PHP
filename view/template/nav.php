@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html"></a>
+                        <a class="nav-link active" aria-current="page" href="index.php"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="actu.html">Actualités</a>
@@ -44,7 +44,7 @@
                             Opérations
                         </a>
                         <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item text-white" href="forms.php">Créer un compte</a></li>
+                            <li><a class="dropdown-item text-white" href="AddCompte.php">Créer un compte</a></li>
                             <li><a class="dropdown-item text-white" href="#">Faire un virement</a></li>
                             <li><a class="dropdown-item text-white" href="#">Prélèvements</a></li>
                         </ul>
