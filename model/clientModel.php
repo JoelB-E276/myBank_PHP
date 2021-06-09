@@ -1,5 +1,5 @@
 <?php 
-
+/*
 function getLogin($email ):array { // nom arbitraire pour se connecter à la BDD, c'est une convetion. PDO typage du parametre de la fonction afin de ne pas avoir d'erreur silencieuse
     $query =  $db->prepare("SELECT * FROM client WHERE c_email =:email"); // :array permet de controler le type valeur de retour de la fonction
     $query->execute([
@@ -23,39 +23,30 @@ function getData(PDO $db, $id):array {
 
     return $result;                                
 
-  }
+  }*/
 
-class ClientModel 
+class ClientModel
 {
     public PDO $db;
 
-    public int    $id;
-    public string $nom;
-    public string $prenom;
-    public string $c_email;
-    public string $c_password;
+    public function __construct() 
+    { 
+        $this->db = new PDO('mysql:host=localhost;dbname=banque_php;charset=utf8','root', '');
+        echo " connection avec construct <br>";
+    }
 
-    function __construct() {
-        $this->setDb();
-      }
-    
-      public function setDb() {
-        $this->db = $db;
-      }
-    
-      public function getDb() {
-        return $this->db;
-      }
-    
+        
     public function getLogin($email)
      { 
-        $response =  $this->getDb()->prepare("SELECT * FROM client WHERE c_email =:email"); 
-        $query = $response->execute([
+        $response =  $this-> db ->prepare("SELECT * FROM client WHERE c_email = :email");
+        $response->execute([
             "email" => $email
-        ]);                                           
+            ]);                                             
+
          $result = $response->fetch(PDO::FETCH_ASSOC);  
-    
-        return $result;    
+         $result = new Client($result);
+   
+           return $result;     
     }   
     
     

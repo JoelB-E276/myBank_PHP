@@ -9,7 +9,7 @@ class Client
     public string $c_email;
     public string $c_password;
 
-    public function __construct(?array $data=null) {
+    public function __construct($data=null) {
         if($data) {
             foreach($data as $key => $value) {
                 $setter = "set" . ucfirst($key);
@@ -51,7 +51,7 @@ class Client
     }
 
 
-    public function setC_email(int $c_email)
+    public function setC_email(string $c_email)
     {
         $this->c_email = $c_email;
     }

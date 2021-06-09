@@ -12,12 +12,12 @@ class Connexion
     {
       $db = new PDO('mysql:host=localhost;dbname='. self::DB_NAME .';charset=utf8', self::USER_NAME , self::USER_PASSWORD);
       /// ####   Message a retirer #### /// 
-      echo "Connecté à la BDD"; 
+      echo "Connecté avec class Connexion. <br>"; 
       return $db;
     }
       catch(Exception $error)
        {
-         echo " Non connecté à la DBB";
+         echo " Non connecté à la DBB <br>";
          echo $error->getMessage();
          exit;
        }

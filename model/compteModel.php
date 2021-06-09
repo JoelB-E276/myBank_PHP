@@ -13,7 +13,7 @@ function getCompte(PDO $db, $id):array {
 
    function addCompte (PDO $db, $data) {
       $query = $db->prepare("SELECT");
-      $quey = execute([
+      $query -> execute([
             ""
       ]);
 
