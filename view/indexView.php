@@ -10,17 +10,17 @@ include "view/template/header.php";
         <div class="container">
             <div class="row ">
 
-            <?php foreach($account as $data):?>
+            <?php foreach($getAccount as $data):?>
 
                 <div class="col-md-3 mb-5 mx-5">
                   <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $_SESSION["user"]["prenom"] ." ". $_SESSION["user"]["nom"];?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $data["type_compte"]?></h6>
-                        <p class="card-text"><?php echo "N°compte " . $data["numero_compte"]?></p>
+                        <h5 class="card-title"><strong>Titulaire</strong><?php echo"  " . $client->getPrenom() ." " . $client->getNom();?></h5>
+                        <h6 class="card-subtitle mb-2"><?php echo $data["type_compte"]?></h6>
+                        <p class="card-text"><?php echo "N°compte " . $data["numero_compte"];?></p>
                         <p class="card-text"><strong>Solde</strong></p>
-                        <p class="card-text"><?php echo $data["solde_compte"]?></p>          
-                        <a href="compte.php?nCompte=<?php echo $data["id_compte"] ?>" class="card-link stretched-link">Détail de vos opérations</a>
+                        <p class="card-text">€<?php echo "  " . $data["solde_compte"];?></p>          
+                        <a href="compte.php?nCompte=<?php echo $data["numero_compte"]; ?>" class="card-link stretched-link">Détail de vos opérations</a>
                     </div>
                   </div>
                 </div>

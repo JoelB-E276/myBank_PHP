@@ -1,6 +1,6 @@
 <?php 
 
-class Client
+class Compte
 {
 
     public int    $id_compte;
@@ -30,6 +30,16 @@ class Client
     public function getId_compte()
     {
         return $this->id_compte;
+    }
+
+
+    public function setId_client(int $id_client)
+    {
+        $this->id_client = $client;
+    }
+    public function getId_client()
+    {
+        return $this->id_client;
     }
 
 
