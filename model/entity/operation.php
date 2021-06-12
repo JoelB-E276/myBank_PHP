@@ -6,7 +6,7 @@ class Operation
     public int    $id_numero_operation;
     public int    $id_compte;
     public int    $montant;
-    public int    $date_operation;
+    public string $date_operation;
     public string $type_de_transaction;
 
 
@@ -43,7 +43,7 @@ class Operation
     }
 
 
-    public function Montant(int $montant)
+    public function setMontant(int $montant)
     {
         $this->montant = $montant;
     }
@@ -53,7 +53,7 @@ class Operation
     }
 
 
-    public function setDate_operation(int $date_operation)
+    public function setDate_operation(string $date_operation)
     {
         $this->date_operation = $date_operation;
     }

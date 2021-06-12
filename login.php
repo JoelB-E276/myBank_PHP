@@ -13,19 +13,18 @@ require "model/entity/client.php";
     $client = new Client($_POST);
     $client = $user->getLogin($_POST["c_email"]);
    
-
-    if($user)
-    { 
-      if(password_verify($_POST["c_password"], $client->getC_password()))
+      if($user)
       { 
-         session_start();
-         $_SESSION["user"] = $client;
-         $_SESSION["id"] = $sessionId;
-         header("Location:index.php");
-         exit;
+          if(password_verify($_POST["c_password"], $client->getC_password()))
+          { 
+            session_start();
+            $_SESSION["user"] = $client;
+            $_SESSION["id"] = $sessionId;
+            header("Location:index.php");
+            exit;
+          }
       }
-    }
-         echo "Identifiants invalides";   
+          echo "Identifiants invalides";   
      
  }
 

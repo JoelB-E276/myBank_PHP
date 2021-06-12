@@ -77,7 +77,7 @@ class Compte
     {
         $this->solde_compte = $solde_compte;
     }
-    public function getSolde_compted()
+    public function getSolde_compte()
     {
         return $this->solde_compte;
     }

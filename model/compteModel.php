@@ -1,15 +1,8 @@
 
 <?php 
 
-   function addCompte (PDO $db, $data) {
-      $query = $db->prepare("SELECT");
-      $query -> execute([
-            ""
-      ]);
-
-   }
-    
-class AccountModel 
+   
+    class AccountModel 
 {
    public PDO $db;
 
@@ -25,11 +18,20 @@ class AccountModel
        WHERE compte.id_client ='{$id}'");////// Faille xss //////                         
       
       $result = $response->fetchAll(PDO::FETCH_ASSOC);
+      foreach($result as $key => $data){
+         $result[$key] = new Compte($data);
+     }
 
       return $result;      
     }                             
 
-   
+    function addAccount (PDO $db, $data) {
+      $query = $db->prepare("SELECT");
+      $query -> execute([
+            ""
+      ]);
+
+   }
 
  
 

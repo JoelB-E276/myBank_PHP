@@ -3,13 +3,12 @@
 <?php include("template/header.php");?>
 
  <main class="container">
- <h2>Création de compte</h2>
-  <form class="row g-3" method="POST">
+ <h2 class="my-3">Création de compte</h2>
+  <form class="row g-3 my-5" method="POST">
     <div class="col-md-5">
       <label type="inputName" class="form-label">Prénom Nom</label>
       <select id="inputState" class="form-select" name="nom">
         <option selected>Titulaire du compte</option>
-        <option><?php echo $_SESSION["user"]["prenom"] ." ". $_SESSION["user"]["nom"]?></option>
       </select>
     </div>
     <div class="col-md-5">
@@ -21,10 +20,6 @@
         <option>Livret Epargne Populaire</option>
         <option>Livret qui rapporte</option>
       </select>
-    </div>
-    <div class="col-md-5">
-      <label for="inputDate" class="form-label">Date de création</label>
-      <input type="date" class="form-control" name="date_ouv">
     </div>
     <div class="col-md-2">
       <label class="form-label">Montant initial du dépôt</label>

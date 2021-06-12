@@ -18,11 +18,11 @@ include "view/template/header.php";
                 </thead>
                 <tbody>
                   <tr>
-                  <?php foreach($detail as $data):?>
+                  <?php foreach($details as $data):?>
                     <th scope="row"></th>
-                    <td><?php echo $data["date_operation"]?></td>
-                    <td><?php echo $data["type_de_transaction"]?></td>
-                    <td><?php echo $data["montant"]?></td>          
+                    <td><?php echo $data -> getDate_operation();?></td>
+                    <td><?php echo $data -> getType_de_transaction();?></td>
+                    <td><?php echo $data -> getMontant();?></td>          
                    </tr>
                    <?php endforeach?>
                 </tbody>        
