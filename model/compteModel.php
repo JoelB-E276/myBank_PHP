@@ -1,23 +1,43 @@
 
 <?php 
-function getCompte(PDO $db, $id):array { 
-      $response =  $db->query("SELECT compte.solde_compte, compte.numero_compte, compte.type_compte, compte.id_compte
+
+   
+    class AccountModel 
+{
+   public PDO $db;
+
+    public function __construct() 
+    { 
+        $this->db = new PDO('mysql:host=localhost;dbname=banque_php;charset=utf8','root', '');
+    }
+
+    function getAccount($id)
+    { 
+      $response =  $this -> db->query("SELECT compte.solde_compte, compte.numero_compte, compte.type_compte, compte.id_compte
        FROM compte 
-       WHERE compte.id_client ='{$id}'");                        
+       WHERE compte.id_client ='{$id}'");////// Faille xss //////                         
       
       $result = $response->fetchAll(PDO::FETCH_ASSOC);
+      foreach($result as $key => $data){
+         $result[$key] = new Compte($data);
+     }
 
-      return $result;                                
+      return $result;      
+    }                             
 
-   }
-
-   function addCompte (PDO $db, $data) {
+    function addAccount (PDO $db, $data) {
       $query = $db->prepare("SELECT");
-      $quey = execute([
+      $query -> execute([
             ""
       ]);
 
    }
-    
+
+ 
+
+}
+
+
+
 ?>
 

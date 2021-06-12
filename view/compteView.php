@@ -10,7 +10,7 @@ include "view/template/header.php";
              <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col"><?php echo $_SESSION["user"]["prenom"] ." ". $_SESSION["user"]["nom"];?></th>
+                    <th scope="col"><?php echo"  " . $client->getPrenom() ." " . $client->getNom();?></th>
                     <th scope="col">Date</th>
                     <th scope="col">Type de transaction</th>
                     <th scope="col">Montant</th>
@@ -18,11 +18,11 @@ include "view/template/header.php";
                 </thead>
                 <tbody>
                   <tr>
-                  <?php foreach($detail as $data):?>
+                  <?php foreach($details as $data):?>
                     <th scope="row"></th>
-                    <td><?php echo $data["date_operation"]?></td>
-                    <td><?php echo $data["type_de_transaction"]?></td>
-                    <td><?php echo $data["montant"]?></td>          
+                    <td><?php echo $data -> getDate_operation();?></td>
+                    <td><?php echo $data -> getType_de_transaction();?></td>
+                    <td><?php echo $data -> getMontant();?></td>          
                    </tr>
                    <?php endforeach?>
                 </tbody>        
