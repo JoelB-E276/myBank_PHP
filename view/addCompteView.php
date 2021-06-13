@@ -8,7 +8,7 @@
     <div class="col-md-5">
       <label type="inputName" class="form-label">Prénom Nom</label>
       <select id="inputState" class="form-select" name="nom">
-        <option selected>Titulaire du compte</option>
+        <option selected><?php echo"  " . $client->getPrenom() ." " . $client->getNom();?></option>
       </select>
     </div>
     <div class="col-md-5">

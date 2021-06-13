@@ -25,7 +25,8 @@ class ClientModel
     }   
     
     
-    public function getData(PDO $db, $id):array { 
+    public function getData(PDO $db, $id)
+    { 
         $response =  $this -> db -> query("SELECT client.nom, client.prenom
          FROM client 
          INNER JOIN compte 
@@ -36,7 +37,7 @@ class ClientModel
     
         return $result;                                
     
-      }
+    }
 
 
 

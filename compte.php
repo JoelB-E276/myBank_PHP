@@ -1,6 +1,7 @@
 <?php 
 session_start();
- if(isset($_SESSION["user"])){
+ if(isset($_SESSION["user"]))
+ {
     require "model/connexion.php";
     require "model/clientModel.php";
     require "model/entity/client.php";
@@ -19,8 +20,10 @@ session_start();
     $details = $operationModel -> getDetails($compte->getId_compte());
 
 
-} else {
-    header("Location:login.php");
-    exit;
-}
+} else 
+    {
+        header("Location:login.php");
+        exit;
+    }
+    
 require "view/compteView.php";

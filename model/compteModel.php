@@ -25,11 +25,15 @@
       return $result;      
     }                             
 
-    function addAccount (PDO $db, $data) {
-      $query = $db->prepare("SELECT");
-      $query -> execute([
-            ""
+    function addAccount(Compte $addAccount)
+    {
+      $query = $this -> db -> prepare('INSERT INTO compte (solde_compte, type_compte, date_ouv) VALUES (:solde_compte, :type_compte, now())');
+      $result = $query -> execute ([
+            "solde_compte"  => $addAccount -> getSolde_compte(),
+            "type_compte" => $addAccount -> getType_compte(),
+
       ]);
+      return;
 
    }
 
@@ -38,6 +42,6 @@
 }
 
 
-
+/*('INSERT INTO compte (type_compte,id_compte,solde_compte,date_ouv) VALUES (:type_compte,DEFAULT,:montant,now())');*/
 ?>
 

@@ -11,11 +11,15 @@ class Compte
     public int    $id_client;
 
 
-    public function __construct($data=null) {
-        if($data) {
-            foreach($data as $key => $value) {
+    public function __construct($data=null) 
+    {
+        if($data)
+         {
+            foreach($data as $key => $value) 
+            {
                 $setter = "set" . ucfirst($key);
-                if(method_exists($this, $setter)) {
+                if(method_exists($this, $setter))
+                {
                     $this->$setter($value);
                 }
             }

@@ -9,13 +9,17 @@ class Client
     public string $c_email;
     public string $c_password;
 
-    public function __construct($data=null) {
-        if($data) {
-            foreach($data as $key => $value) {
+    public function __construct($data=null) 
+    {
+        if($data) 
+        {
+            foreach($data as $key => $value) 
+            {
                 $setter = "set" . ucfirst($key);
-                if(method_exists($this, $setter)) {
+                if(method_exists($this, $setter)) 
+                 {
                     $this->$setter($value);
-                }
+                 }
             }
         }
     }
