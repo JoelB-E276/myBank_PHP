@@ -10,7 +10,7 @@ include "view/template/header.php";
              <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col"><?php echo"  " . $client->getPrenom() ." " . $client->getNom();?></th>
+                    <th scope="col"><?php echo"  " . $_SESSION["user"]->getPrenom() ." " . $_SESSION["user"]->getNom();?></th>
                     <th scope="col">Date</th>
                     <th scope="col">Type de transaction</th>
                     <th scope="col">Montant</th>

@@ -7,18 +7,16 @@ require "model/entity/client.php";
 
  if(isset($_POST["c_email"]) && isset($_POST["c_password"]))
   { 
-    $connect = new Connexion();
-    $connect->connect();
+    
     $user = new clientModel(); 
-    $client = new Client($_POST);
     $client = $user->getLogin($_POST["c_email"]);
    
-      if($user)
+      if($client)
       { 
           if(password_verify($_POST["c_password"], $client->getC_password()))
           { 
             session_start();
-            $_SESSION["user"] = $client;
+            $_SESSION["user"] = $client;// $ session = objet client de getlogin Ligne12
             $_SESSION["id"] = $sessionId;
             header("Location:index.php");
             exit;

@@ -39,7 +39,7 @@ class Compte
 
     public function setId_client(int $id_client)
     {
-        $this->id_client = $client;
+        $this->id_client = $id_client;
     }
     public function getId_client()
     {

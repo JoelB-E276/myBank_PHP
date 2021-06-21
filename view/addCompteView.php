@@ -8,7 +8,7 @@
     <div class="col-md-5">
       <label type="inputName" class="form-label">Prénom Nom</label>
       <select id="inputState" class="form-select" name="nom">
-        <option selected><?php echo"  " . $client->getPrenom() ." " . $client->getNom();?></option>
+        <option selected><?php echo"  " . $_SESSION["user"]->getPrenom() ." " . $_SESSION["user"]->getNom();?></option>
       </select>
     </div>
     <div class="col-md-5">
@@ -23,7 +23,7 @@
     </div>
     <div class="col-md-2">
       <label class="form-label">Montant initial du dépôt</label>
-      <input type="text" class="form-control" placeholder="Minimum 500€" name="montant">
+      <input type="text" class="form-control" placeholder="Minimum 500€" name="solde_compte">
     </div>
     <div class="col-12">
       <div class="form-check">

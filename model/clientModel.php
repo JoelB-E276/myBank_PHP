@@ -5,9 +5,9 @@ class ClientModel
     public PDO $db;
 
     public function __construct() 
-    { 
-        $this->db = new PDO('mysql:host=localhost;dbname=banque_php;charset=utf8','root', '');
-        echo " connection avec construct <br>";
+    {   
+        $connect = new Connexion();
+        $this->db = $connect->connect();
     }
 
         

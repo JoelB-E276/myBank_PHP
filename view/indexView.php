@@ -15,7 +15,7 @@ include "view/template/header.php";
                 <div class="col-md-3 mb-5 mx-5">
                   <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><strong>Titulaire</strong><?php echo"  " . $client->getPrenom() ." " . $client->getNom();?></h5>
+                        <h5 class="card-title"><strong>Titulaire</strong><?php echo"  " . $_SESSION["user"]->getPrenom() ." " . $_SESSION["user"]->getNom();?></h5>
                         <h6 class="card-subtitle mb-2"><?php echo $data -> getType_compte();?></h6>
                         <p class="card-text"><?php echo "N°compte " . $data -> getNumero_compte();?></p>
                         <p class="card-text"><strong>Solde</strong></p>
